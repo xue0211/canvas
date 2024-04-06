@@ -19,18 +19,18 @@ html {
     left: 0;
 }
 
-.actions > #brush {
+.actions>#brush {
     display: none;
 }
 
-.actions.x > #brush {
+.actions.x>#brush {
     display: inline-block;
 }
 
-.actions.x > #eraser {
+.actions.x>#eraser {
     display: none;
 }
 
-canvas{
-    display:block;
-  }
+canvas {
+    display: block;
+}
