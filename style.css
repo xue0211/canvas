@@ -30,3 +30,7 @@ html {
 .actions.x > #eraser {
     display: none;
 }
+
+canvas{
+    display:block;
+  }
