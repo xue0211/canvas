@@ -14,21 +14,40 @@ listenToUser(yyy)
 //控制橡皮擦是否开启
 
 var eraserEnabled = false
-eraser.onclick = function () { //橡皮擦被点击说明换成了画笔
-    /*eraserEnabled = !eraserEnabled
-    if(eraserEnabled){
-        eraser.textContent = '画笔'
-     }else{
-        eraser.textContent = '橡皮擦'
-     }//尽量让一个按钮只做一件事情，这样bug少*/
-    eraserEnabled = true
-    actions.className = 'actions x'
-}
-brush.onclick = function () {
+pen.onclick = function () {
     eraserEnabled = false
-    actions.className = 'actions'
+    pen.classList.add('active')
+    eraser.classList.remove('active')
+}
+eraser.onclick = function () {
+    eraserEnabled = true
+    eraser.classList.add('active')
+    pen.classList.remove('active')
 }
 
+red.onclick = function () {
+    context.strokeStyle = 'red'
+    red.classList.add('active')
+}
+orange.onclick = function () {
+    context.strokeStyle = 'orange'
+    green.classList.remove('active')
+}
+yellow.onclick = function () {
+    context.strokeStyle = 'yellow'
+}
+green.onclick = function () {
+    context.strokeStyle = 'green'
+}
+cyan.onclick = function () {
+    context.strokeStyle = 'cyan'
+}
+blue.onclick = function () {
+    context.strokeStyle = 'blue'
+}
+purple.onclick = function () {
+    context.strokeStyle = 'purple'
+}
 /***************/
 function autoSetCanvasSize(canvas) {
     setCanvasSize()
@@ -48,14 +67,12 @@ function autoSetCanvasSize(canvas) {
 
 function drawCircle(x, y, radius) {
     context.beginPath();
-    context.fillStyle = 'black'
     context.arc(x, y, radius, 0, Math.PI * 2)
     context.fill()
 }
 
 function drawLine(x1, y1, x2, y2) {
     context.beginPath();
-    context.strokeStyle = 'black'
     context.moveTo(x1, y1)  //起点
     context.lineWidth = 4
     context.lineTo(x2, y2)  //终点
@@ -79,7 +96,7 @@ function listenToUser(canvas) {
             console.log(aaa)*/
             var x = aaa.touches[0].clientX
             var y = aaa.touches[0].clientY
-            console.log(x,y)
+            console.log(x, y)
             using = true
             if (eraserEnabled) {
                 context.clearRect(x - 5, y - 5, 10, 10)

@@ -1,12 +1,19 @@
-#xxx {
-    background: green;
-    display: block;
+ol,ul{list-style: none;}
+*{margin: 0; padding: 0;}
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
 
+#xxx {
+    display: block;
 }
 
 body {
     margin: 0px;
-    border: 1px solid red;
 }
 
 html {
@@ -15,22 +22,68 @@ html {
 
 .actions {
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
+    padding: 20px;
+
 }
 
-.actions>#brush {
-    display: none;
+.actions>svg {
+    width: 1.5em;
+    height: 1.5em;
+    transition: all 0.3s; /*圆滑过渡*/
+    margin: 0 10px;
 }
 
-.actions.x>#brush {
-    display: inline-block;
-}
-
-.actions.x>#eraser {
-    display: none;
+.actions>svg.active{
+    fill: red;
+    transform: scale(1.2);
+    
 }
 
 canvas {
     display: block;
 }
+
+.colors{
+    position: fixed;
+    top:70px;
+    left: 25px;
+}
+
+.colors > li{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 10px 0;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s;
+}
+
+.colors > li.red{
+    background: red;
+}
+.colors > li.orange{
+    background: orange;
+}
+.colors > li.yellow{
+    background: yellow;
+}
+.colors > li.green{
+    background: green;
+}
+.colors > li.cyan{
+    background: cyan;
+}
+.colors > li.blue{
+    background: blue;
+}
+.colors > li.purple{
+    background: purple;
+}
+.colors > li.active{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.95);
+    transform: scale(1.2); 
+
+}
+
