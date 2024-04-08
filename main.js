@@ -1,3 +1,4 @@
+
 //控制宽高
 var yyy = document.getElementById('xxx');
 var context = yyy.getContext('2d');
@@ -119,21 +120,21 @@ purple.onclick = function () {
     purple.classList.add('active')
 }
 
-thin.onclick = function(){
+thin.onclick = function () {
     lineWidth = 4
 }
 
-thick.onclick = function(){
+thick.onclick = function () {
     lineWidth = 8
 }
 
-clear1.onclick = function(){
+clear1.onclick = function () {
     context.clearRect(0, 0, yyy.width, yyy.height)
 }
 
-download.onclick = function(){
+download.onclick = function () {
     var url = yyy.toDataURL("image/png")
-   // console.log(url)
+    // console.log(url)
     var a = document.createElement('a')
     document.body.appendChild(a)
     a.href = url

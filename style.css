@@ -18,6 +18,9 @@ ul {
 
 #xxx {
     display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 body {
@@ -112,17 +115,17 @@ canvas {
     top: 20px;
 }
 
-.sizes >li{
+.sizes>li {
     margin: 15px 0;
 }
 
-.sizes .thin{
+.sizes .thin {
     height: 0;
     width: 20px;
     border-top: 3px solid black;
 }
 
-.sizes .thick{
+.sizes .thick {
     height: 0;
     width: 20px;
     border-top: 6px solid black;
