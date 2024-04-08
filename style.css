@@ -14,11 +14,9 @@ ol,ul{list-style: none;}
 
 body {
     margin: 0px;
+    overflow: hidden; /*禁止滚动*/
 }
 
-html {
-    border: 1px solid black;
-}
 
 .actions {
     position: fixed;
