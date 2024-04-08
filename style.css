@@ -1,5 +1,13 @@
-ol,ul{list-style: none;}
-*{margin: 0; padding: 0;}
+ol,
+ul {
+    list-style: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .icon {
     width: 1em;
     height: 1em;
@@ -14,7 +22,8 @@ ol,ul{list-style: none;}
 
 body {
     margin: 0px;
-    overflow: hidden; /*禁止滚动*/
+    overflow: hidden;
+    /*禁止滚动*/
 }
 
 
@@ -29,27 +38,28 @@ body {
 .actions>svg {
     width: 1.5em;
     height: 1.5em;
-    transition: all 0.3s; /*圆滑过渡*/
+    transition: all 0.3s;
+    /*圆滑过渡*/
     margin: 0 10px;
 }
 
-.actions>svg.active{
+.actions>svg.active {
     fill: red;
     transform: scale(1.2);
-    
+
 }
 
 canvas {
     display: block;
 }
 
-.colors{
+.colors {
     position: fixed;
-    top:70px;
+    top: 70px;
     left: 25px;
 }
 
-.colors > li{
+.colors>li {
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -58,30 +68,58 @@ canvas {
     transition: all 0.3s;
 }
 
-.colors > li.red{
+.colors>li.red {
     background: red;
 }
-.colors > li.orange{
+
+.colors>li.orange {
     background: orange;
 }
-.colors > li.yellow{
+
+.colors>li.yellow {
     background: yellow;
 }
-.colors > li.green{
+
+.colors>li.green {
     background: green;
 }
-.colors > li.cyan{
+
+.colors>li.cyan {
     background: cyan;
 }
-.colors > li.blue{
+
+.colors>li.blue {
     background: blue;
 }
-.colors > li.purple{
+
+.colors>li.purple {
     background: purple;
 }
-.colors > li.active{
+
+.colors>li.active {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.95);
-    transform: scale(1.2); 
+    transform: scale(1.2);
 
 }
 
+.sizes {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
+
+.sizes >li{
+    margin: 15px 0;
+}
+
+.sizes .thin{
+    height: 0;
+    width: 20px;
+    border-top: 3px solid black;
+}
+
+.sizes .thick{
+    height: 0;
+    width: 20px;
+    border-top: 6px solid black;
+}

@@ -1,6 +1,7 @@
 //控制宽高
 var yyy = document.getElementById('xxx');
 var context = yyy.getContext('2d');
+var lineWidth = 4
 
 autoSetCanvasSize(yyy)
 
@@ -99,6 +100,29 @@ purple.onclick = function () {
     blue.classList.remove('active')
     purple.classList.add('active')
 }
+
+thin.onclick = function(){
+    lineWidth = 4
+}
+
+thick.onclick = function(){
+    lineWidth = 8
+}
+
+clear1.onclick = function(){
+    context.clearRect(0, 0, yyy.width, yyy.height)
+}
+
+download.onclick = function(){
+    var url = yyy.toDataURL("image/png")
+   // console.log(url)
+    var a = document.createElement('a')
+    document.body.appendChild(a)
+    a.href = url
+    a.download = 'my canvas'
+    a.target = '_blank'
+    a.click()
+}
 /***************/
 function autoSetCanvasSize(canvas) {
     setCanvasSize()
@@ -119,13 +143,14 @@ function autoSetCanvasSize(canvas) {
 function drawCircle(x, y, radius) {
     context.beginPath();
     context.arc(x, y, radius, 0, Math.PI * 2)
+    context.strokeStyle = 'black'
     context.fill()
 }
 
 function drawLine(x1, y1, x2, y2) {
     context.beginPath();
     context.moveTo(x1, y1)  //起点
-    context.lineWidth = 4
+    context.lineWidth = lineWidth
     context.lineTo(x2, y2)  //终点
     context.stroke()
     context.closePath()
@@ -147,7 +172,7 @@ function listenToUser(canvas) {
             console.log(aaa)*/
             var x = aaa.touches[0].clientX
             var y = aaa.touches[0].clientY
-            console.log(x, y)
+            //console.log(x, y)
             using = true
             if (eraserEnabled) {
                 context.clearRect(x - 5, y - 5, 10, 10)
@@ -162,7 +187,7 @@ function listenToUser(canvas) {
         }
 
         canvas.ontouchmove = function (aaa) {
-            console.log('边摸变动')
+            /*console.log('边摸变动')*/
             var x = aaa.touches[0].clientX
             var y = aaa.touches[0].clientY
 
@@ -183,7 +208,7 @@ function listenToUser(canvas) {
         }
 
         canvas.ontouchend = function () {
-            console.log('摸完了')
+            //console.log('摸完了')
             using = false
         }
     } else {
