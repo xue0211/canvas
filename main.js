@@ -26,8 +26,20 @@ eraser.onclick = function () {
     pen.classList.remove('active')
 }
 
+black.onclick = function () {
+    context.strokeStyle = 'black'
+    black.classList.add('active')
+    red.classList.remove('active')
+    orange.classList.remove('active')
+    yellow.classList.remove('active')
+    green.classList.remove('active')
+    cyan.classList.remove('active')
+    blue.classList.remove('active')
+    purple.classList.remove('active')
+}
 red.onclick = function () {
     context.strokeStyle = 'red'
+    black.classList.remove('active')
     red.classList.add('active')
     orange.classList.remove('active')
     yellow.classList.remove('active')
@@ -38,6 +50,7 @@ red.onclick = function () {
 }
 orange.onclick = function () {
     context.strokeStyle = 'orange'
+    black.classList.remove('active')
     red.classList.remove('active')
     orange.classList.add('active')
     yellow.classList.remove('active')
@@ -48,6 +61,7 @@ orange.onclick = function () {
 }
 yellow.onclick = function () {
     context.strokeStyle = 'yellow'
+    black.classList.remove('active')
     red.classList.remove('active')
     orange.classList.remove('active')
     green.classList.remove('active')
@@ -59,6 +73,7 @@ yellow.onclick = function () {
 }
 green.onclick = function () {
     context.strokeStyle = 'green'
+    black.classList.remove('active')
     red.classList.remove('active')
     orange.classList.remove('active')
     green.classList.add('active')
@@ -69,6 +84,7 @@ green.onclick = function () {
 }
 cyan.onclick = function () {
     context.strokeStyle = 'cyan'
+    black.classList.remove('active')
     red.classList.remove('active')
     orange.classList.remove('active')
     green.classList.remove('active')
@@ -80,6 +96,7 @@ cyan.onclick = function () {
 }
 blue.onclick = function () {
     context.strokeStyle = 'blue'
+    black.classList.remove('active')
     red.classList.remove('active')
     orange.classList.remove('active')
     green.classList.remove('active')
@@ -91,6 +108,7 @@ blue.onclick = function () {
 }
 purple.onclick = function () {
     context.strokeStyle = 'purple'
+    black.classList.remove('active')
     red.classList.remove('active')
     orange.classList.remove('active')
     green.classList.remove('active')
@@ -143,7 +161,6 @@ function autoSetCanvasSize(canvas) {
 function drawCircle(x, y, radius) {
     context.beginPath();
     context.arc(x, y, radius, 0, Math.PI * 2)
-    context.strokeStyle = 'black'
     context.fill()
 }
 
@@ -175,7 +192,7 @@ function listenToUser(canvas) {
             //console.log(x, y)
             using = true
             if (eraserEnabled) {
-                context.clearRect(x - 5, y - 5, 10, 10)
+                context.clearRect(x - 5, y - 5, 15, 15)
             } else {
                 lastPoint = {
                     "x": x,
